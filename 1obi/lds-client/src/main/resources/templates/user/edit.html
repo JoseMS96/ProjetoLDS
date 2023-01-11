@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div layout:fragment="body">
+
+    <div class="container-fluid">
+        <h1>Usuário</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item active">Usuário</li>
+        </ol>
+
+        <div class="row">
+            <div class="mb-2 col-12 col-sm-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="mb-3 text-center">
+                            <img src="/img/undraw_profile_2.svg"
+                                 alt="avatar"
+                                 class="rounded-circle img-fluid">
+                        </div>
+                        <div class="mb-2">
+                            <form action=""
+                                  enctype="multipart/form-data">
+                                <input type="file"
+                                       name="file"
+                                       class="form-control-file mb-1"
+                                       accept="image/png,image/jpeg">
+
+                                <input hidden name="userId">
+
+                                <button class="btn btn-primary col-12"
+                                        type="submit">
+                                    Trocar
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-2 col-12 col-sm-7">
+
+                <form th:action="@{/user/update}"
+                      method="POST"
+                      th:object="${user}">
+
+                    <div class="mb-2 card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">Nome</div>
+                                <div class="col-sm-9">
+                                    <input type="text"
+                                           th:field="${user.fullName}"
+                                           class="form-control">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">Email</div>
+                                <div class="col-sm-9">
+                                    <input type="text"
+                                           th:field="${user.email}"
+                                           class="form-control">
+                                </div>
+                            </div>
+                            <hr>
+
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <button type="submit"
+                                role="button"
+                                class="btn btn-primary col-12">Atualizar
+                        </button>
+
+                        <input type="hidden" th:field="${user.id}">
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

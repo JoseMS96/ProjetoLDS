@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div layout:fragment="body">
+
+    <div class="container-fluid">
+        <h1 class="mt-4">Usuários</h1>
+
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item">Lista de usuários</li>
+        </ol>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1">Usuários cadastrados</i>
+            </div>
+
+            <div class="card-body">
+
+                <div class="row float-right">
+                    <a th:href="@{/user/report/read-all}"
+                       class="btn btn-primary" target="_blank">Gerar relatório</a>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th></th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr th:each="user : ${users}">
+
+                            <td th:text="${user.id}">1</td>
+
+                            <td th:text="${user.fullName}">Tiburssinho</td>
+
+                            <td th:text="${user.email}">tiburssinho@gmail.com</td>
+
+                            <td>
+                                <div class="row">
+                                    <div class="col-4"
+                                         sec:authorize="hasAnyRole('ADMINISTRADOR', 'USUARIO')">
+                                        <a th:href="@{/user/detail/{id} (id=${user.id})  }"
+                                           class="btn btn-primary"
+                                           role="button">
+                                            <i class="fas fa-address-card"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-4"
+                                         sec:authorize="hasRole('USUARIO')">
+                                        <a th:href="@{/user/edit/{id} (id=${user.id})  }"
+                                           class="btn btn-warning"
+                                           role="button">
+                                            <i class="fas fa-lock"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-4"
+                                         sec:authorize="hasRole('ADMINISTRADOR')">
+                                        <a th:href="@{/user/delete/{id} (id=${user.id})  }"
+                                           class="btn btn-danger"
+                                           role="button">
+                                            <i class="fas fa-user-alt-slash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
