@@ -1,10 +1,10 @@
 # ProjetoLDS
-[Como executar o projeto abaixo | How to run below]
+Como executar o projeto abaixo | How to run below:
 
 Um projeto desenvolvido durante o ano letivo de 2022, com o core baseado em operações CRUD, que introduz gradativamente diversos conceitos, utilizando:
 
 * Backend - Java
-* Frontend - Html, CSS e Javascript
+* Frontend - HTML, CSS e Javascript
 * Banco de Dados - PostgreSQL
 * Frameworks - Spring, Thymeleaf
 * Spring Security para validação de login
@@ -13,11 +13,11 @@ Um projeto desenvolvido durante o ano letivo de 2022, com o core baseado em oper
 
 
 # Como executar o projeto
-* Alterar a senha em lds-database -> main -> java -> connection -> connectionfactory para a senha do seu postgres
-* Criar banco de dados com o nome "db_fai_lds" e rodar o script fai-lds-db.sql contido no projeto
-* Executar LdsApiapplication e LdsClientApplication
-* Acessar a página localhost:8080
-* Login "admin" e senha "admin"
+* Altere a senha em lds-database -> main -> java -> connection -> connectionfactory para a senha do seu postgres
+* Crie um banco de dados com o nome "db_fai_lds" e rode o script fai-lds-db.sql contido no projeto
+* Execute LdsApiapplication e LdsClientApplication
+* Acesse a página localhost:8080
+* O Login é "admin" e a senha é "admin"
 
 # How to run
 * Change the password in lds-database -> main -> java -> connection -> connectionfactory to your postgres password
