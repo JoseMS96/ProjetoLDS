@@ -4,7 +4,7 @@
 Um projeto desenvolvido durante o ano letivo de 2022, com o core baseado em operações CRUD, que introduz gradativamente diversos conceitos, utilizando:
 
 * Backend - Java
-* Frontend - Html, css e Javascript
+* Frontend - Html, CSS e Javascript
 * Banco de Dados - PostgreSQL
 * Frameworks - Spring, Thymeleaf
 * Spring Security para validação de login
